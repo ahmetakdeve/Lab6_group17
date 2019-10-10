@@ -1,0 +1,47 @@
+---
+title: "fastcomplex package"
+description: "Description for the fastcomplex-package"
+output: rmarkdown::html_vignette
+vignette: >
+ %\VignetteIndexEntry{fastcomplex package}
+ %\VignetteEngine{knitr::rmarkdown}
+ %\VignetteEncoding{UTF-8}
+---
+  
+## Introduction
+This is an introduction to the `fastcomplex` package. The package contains functions that can be used to solve
+the knapsack problem. A brief introduction to all 3 functions will be provided in this vignette.
+
+### How to use the package 
+
+The package can be downloaded from github using `install_github` function from the `devtools` package.
+Do not forget to set the `build_vignettes` statement in `install_github` to TRUE. That way, you force R to upload the vignette for the package.
+
+```{r,eval=FALSE,results='hide'}
+library(devtools)
+install_github("https://github.com/ahmetakdeve/Lab6_group17",
+               subdir = "fastcomplex",build_vignettes = TRUE)
+library(fastcomplex)
+```
+
+The sampled data which will be used to present the function outputs:
+```{r,eval=FALSE,results='hide'}
+suppressWarnings(RNGversion("3.5.9"))
+set.seed(42)
+n <- 2000
+knapsack_objects <- data.frame(
+  w=sample(1:4000, size = n, replace = TRUE),
+  v=runif(n = n, 0, 10000)
+)
+
+```
+
+### Profiling and optimizing code
+
+Since the weight of an item should not exceed the knapsack size, we hade added a row to all algorithms that clear weights greater than the knapsack size before the algorithm runs through all rows. In this way we remove all rows that do not affect the result and the algorithms have less data to get through. This can matter if large amounts of data are used where there are many weights that would be larger than the knapsack size.
+
+
+
+### Brute force search 
+
+This algorithm is going through all combinations and returns the highest possible value.
