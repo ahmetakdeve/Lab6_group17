@@ -1,0 +1,11 @@
+--- re-building 'lab_report_knapsack.Rmd' using rmarkdown
+Quitting from lines 21-25 (lab_report_knapsack.Rmd) 
+Error: processing vignette 'lab_report_knapsack.Rmd' failed with diagnostics:
+there is no package called 'devtools'
+--- failed re-building 'lab_report_knapsack.Rmd'
+
+SUMMARY: processing the following file failed:
+  'lab_report_knapsack.Rmd'
+
+Error: Vignette re-building failed.
+Execution halted

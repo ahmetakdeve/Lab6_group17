@@ -1,0 +1,4 @@
+brute_force_knapsack    Brute force search
+fastcomplex             Knapsack problem
+greedy_knapsack         Greedy heuristic
+knapsack_dynamic        Knapsack dynamic

@@ -12,3 +12,6 @@ RoxygenNote: 6.1.1
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 Imports: doParallel, foreach
+NeedsCompilation: no
+Packaged: 2019-10-11 12:06:48 UTC; Suat
+Built: R 3.6.1; ; 2019-10-11 12:06:57 UTC; windows
