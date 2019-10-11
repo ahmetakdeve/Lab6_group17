@@ -24,7 +24,7 @@ knapsack_objects1000000 <- data.frame(
 
 
 ## ----eval=TRUE-----------------------------------------------------------
-brute_force_knapsack(x = knapsack_objects[1:8,], W = 3500)
+brute_force_knapsack(x = knapsack_objects[1:8,], W = 3500,par=FALSE)
 
 ## ----eval=TRUE-----------------------------------------------------------
 system.time(brute_force_knapsack(x = knapsack_objects16[1:8,], W = 3500))

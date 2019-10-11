@@ -339,7 +339,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div id="brute-force-search" class="section level3">
 <h3>Brute force search</h3>
 <p>This algorithm is going through all 2^n combinations and returns the highest possible value for the knapsack. This approach is of complexity 0(2^n). Example of how running the function:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">brute_force_knapsack</span>(<span class="dt">x =</span> knapsack_objects[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>,], <span class="dt">W =</span> <span class="dv">3500</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">brute_force_knapsack</span>(<span class="dt">x =</span> knapsack_objects[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>,], <span class="dt">W =</span> <span class="dv">3500</span>,<span class="dt">par=</span><span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>## $value
 ## [1] 16770.38
 ## 
@@ -348,7 +348,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <p>Time to run the algorithm for n=16 objects:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">system.time</span>(<span class="kw">brute_force_knapsack</span>(<span class="dt">x =</span> knapsack_objects16[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>,], <span class="dt">W =</span> <span class="dv">3500</span>))</a></code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.06    0.00    0.06</code></pre>
+##    0.08    0.03    1.20</code></pre>
 </div>
 <div id="knapsack-dynamic" class="section level3">
 <h3>Knapsack dynamic</h3>
@@ -362,7 +362,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <p>Time to run the algorithm for n=500 objects:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">system.time</span>(<span class="kw">knapsack_dynamic</span>(<span class="dt">x =</span> knapsack_objects500[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>,], <span class="dt">W =</span> <span class="dv">3500</span>))</a></code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.03    0.00    0.03</code></pre>
+##    0.04    0.00    0.04</code></pre>
 </div>
 <div id="greedy-heuristic" class="section level3">
 <h3>Greedy heuristic</h3>
