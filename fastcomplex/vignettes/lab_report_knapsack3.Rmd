@@ -10,7 +10,7 @@ vignette: >
   
 ## Introduction
   This is an introduction to the `fastcomplex` package. The package contains functions that can be used to solve
-the knapsack problem. A brief introduction to all 3 functions will be provided in this vignette.
+the knapsack problem. A brief introduction to all three functions will be provided in this vignette.
 
 ### How to use the package 
 
