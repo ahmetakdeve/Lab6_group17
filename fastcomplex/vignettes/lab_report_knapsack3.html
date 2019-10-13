@@ -310,27 +310,27 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div id="how-to-use-the-package" class="section level3">
 <h3>How to use the package</h3>
 <p>The package can be downloaded from github using <code>install_github</code> function from the <code>devtools</code> package. Do not forget to set the <code>build_vignettes</code> statement in <code>install_github</code> to TRUE. That way, you force R to upload the vignette for the package.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(devtools)</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">install_github</span>(<span class="st">&quot;https://github.com/ahmetakdeve/Lab6_group17&quot;</span>,</a>
-<a class="sourceLine" id="cb1-3" title="3">               <span class="dt">subdir =</span> <span class="st">&quot;fastcomplex&quot;</span>,<span class="dt">build_vignettes =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw">library</span>(fastcomplex)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">install_github</span>(<span class="st">&quot;https://github.com/ahmetakdeve/Lab6_group17&quot;</span>,</a>
+<a class="sourceLine" id="cb1-2" title="2">               <span class="co">#subdir = &quot;fastcomplex&quot;,build_vignettes = TRUE)</span></a></code></pre></div>
 <p>The sampled data which will be used to present the function outputs:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">suppressWarnings</span>(<span class="kw">RNGversion</span>(<span class="st">&quot;3.5.9&quot;</span>))</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw">set.seed</span>(<span class="dv">42</span>)</a>
-<a class="sourceLine" id="cb2-3" title="3">n &lt;-<span class="st"> </span><span class="dv">2000</span></a>
-<a class="sourceLine" id="cb2-4" title="4">knapsack_objects &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb2-5" title="5">  <span class="dt">w=</span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4000</span>, <span class="dt">size =</span> n, <span class="dt">replace =</span> <span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb2-6" title="6">  <span class="dt">v=</span><span class="kw">runif</span>(<span class="dt">n =</span> n, <span class="dv">0</span>, <span class="dv">10000</span>))</a>
-<a class="sourceLine" id="cb2-7" title="7">knapsack_objects16 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb2-8" title="8">  <span class="dt">w=</span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4000</span>, <span class="dt">size =</span> <span class="dv">16</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb2-9" title="9">  <span class="dt">v=</span><span class="kw">runif</span>(<span class="dt">n =</span> n, <span class="dv">0</span>, <span class="dv">10000</span>))</a>
-<a class="sourceLine" id="cb2-10" title="10">knapsack_objects500 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb2-11" title="11">  <span class="dt">w=</span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4000</span>, <span class="dt">size =</span> <span class="dv">500</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb2-12" title="12">  <span class="dt">v=</span><span class="kw">runif</span>(<span class="dt">n =</span> n, <span class="dv">0</span>, <span class="dv">10000</span>))</a>
-<a class="sourceLine" id="cb2-13" title="13">knapsack_objects1000000 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb2-14" title="14">  <span class="dt">w=</span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4000</span>, <span class="dt">size =</span> <span class="dv">1000000</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb2-15" title="15">  <span class="dt">v=</span><span class="kw">runif</span>(<span class="dt">n =</span> n, <span class="dv">0</span>, <span class="dv">10000</span>)</a>
-<a class="sourceLine" id="cb2-16" title="16">)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">library</span>(fastcomplex)</a>
+<a class="sourceLine" id="cb2-2" title="2"></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">suppressWarnings</span>(<span class="kw">RNGversion</span>(<span class="st">&quot;3.5.9&quot;</span>))</a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="kw">set.seed</span>(<span class="dv">42</span>)</a>
+<a class="sourceLine" id="cb2-5" title="5">n &lt;-<span class="st"> </span><span class="dv">2000</span></a>
+<a class="sourceLine" id="cb2-6" title="6">knapsack_objects &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb2-7" title="7">  <span class="dt">w=</span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4000</span>, <span class="dt">size =</span> n, <span class="dt">replace =</span> <span class="ot">TRUE</span>),</a>
+<a class="sourceLine" id="cb2-8" title="8">  <span class="dt">v=</span><span class="kw">runif</span>(<span class="dt">n =</span> n, <span class="dv">0</span>, <span class="dv">10000</span>))</a>
+<a class="sourceLine" id="cb2-9" title="9">knapsack_objects16 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb2-10" title="10">  <span class="dt">w=</span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4000</span>, <span class="dt">size =</span> <span class="dv">16</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>),</a>
+<a class="sourceLine" id="cb2-11" title="11">  <span class="dt">v=</span><span class="kw">runif</span>(<span class="dt">n =</span> n, <span class="dv">0</span>, <span class="dv">10000</span>))</a>
+<a class="sourceLine" id="cb2-12" title="12">knapsack_objects500 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb2-13" title="13">  <span class="dt">w=</span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4000</span>, <span class="dt">size =</span> <span class="dv">500</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>),</a>
+<a class="sourceLine" id="cb2-14" title="14">  <span class="dt">v=</span><span class="kw">runif</span>(<span class="dt">n =</span> n, <span class="dv">0</span>, <span class="dv">10000</span>))</a>
+<a class="sourceLine" id="cb2-15" title="15">knapsack_objects1000000 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb2-16" title="16">  <span class="dt">w=</span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4000</span>, <span class="dt">size =</span> <span class="dv">1000000</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>),</a>
+<a class="sourceLine" id="cb2-17" title="17">  <span class="dt">v=</span><span class="kw">runif</span>(<span class="dt">n =</span> n, <span class="dv">0</span>, <span class="dv">10000</span>)</a>
+<a class="sourceLine" id="cb2-18" title="18">)</a></code></pre></div>
 </div>
 <div id="profiling-and-optimizing-code" class="section level3">
 <h3>Profiling and optimizing code</h3>
@@ -348,7 +348,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <p>Time to run the algorithm for n=16 objects:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">system.time</span>(<span class="kw">brute_force_knapsack</span>(<span class="dt">x =</span> knapsack_objects16[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>,], <span class="dt">W =</span> <span class="dv">3500</span>))</a></code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.08    0.03    1.20</code></pre>
+##    0.08    0.03    1.56</code></pre>
 </div>
 <div id="knapsack-dynamic" class="section level3">
 <h3>Knapsack dynamic</h3>
@@ -362,7 +362,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <p>Time to run the algorithm for n=500 objects:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">system.time</span>(<span class="kw">knapsack_dynamic</span>(<span class="dt">x =</span> knapsack_objects500[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>,], <span class="dt">W =</span> <span class="dv">3500</span>))</a></code></pre></div>
 <pre><code>##    user  system elapsed 
-##    0.04    0.00    0.04</code></pre>
+##    0.03    0.00    0.04</code></pre>
 </div>
 <div id="greedy-heuristic" class="section level3">
 <h3>Greedy heuristic</h3>

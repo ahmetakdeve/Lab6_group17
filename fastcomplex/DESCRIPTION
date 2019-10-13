@@ -9,6 +9,7 @@ Description: The function includes three algorithms which are brute force search
 License: GPL-2
 Encoding: UTF-8
 RoxygenNote: 6.1.1
-Suggests: knitr, rmarkdown
+Suggests: knitr, rmarkdown,testthat, devtools, fastcomplex
 VignetteBuilder: knitr
 Imports: doParallel, foreach
+NeedsCompilaton: no
